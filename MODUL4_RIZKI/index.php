@@ -1,8 +1,46 @@
+<?php
+	$font_size = '15px';
+	$background_color = '#4e79a0';
+	
+	if ($_POST) {
+		$background_color = $_POST['background_color'];
+		$font_size = $_POST['font_size'];
+	} else {
+		if (isset($_COOKIE['background-color'])) {
+			 $_POST['background_color'] = $background_color = $_COOKIE['background-color'];
+		}
+		if (isset($_COOKIE['font-size'])) {
+			 $_POST['font_size'] = $font_size = $_COOKIE['font-size'];
+		}
+	}
+	
+	// Delete Cookies
+	$msg = false;
+	if (isset($_POST['hapus_cookie']))
+	{
+		setcookie('background-color', '', 1, '/');
+		setcookie('font-size', '', 1, '/');
+		$msg = 'Data cookie berhasil dihapus';
+	}
+
+	// Set Cookie 7  hari
+	if (isset($_POST['remember']))
+	{
+		setcookie('background-color', $_POST['background_color'], strtotime('+7 days'), '/');
+		setcookie('font-size', $_POST['font_size'], strtotime('+7 days'), '/');
+    $msg = 'Data cookie berhasil disimpan';
+  }
+  
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
   <title> INDEX WAD BEATUY</title>
+
   <style>
     body {
       background-color: LightCyan;
@@ -17,7 +55,21 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg <?=$db->getColor()?>'>
+function getColor()
+  {
+    $uid = $_SESSION['user-id']
+    $colorCookiekey ="color".$uid;
+    
+    $colorNav ="";
+    if (isset($COOKIE[$colorCookiekey]))
+    $colorNav = $_COOKIE[$colorCookiekey];
+  }else{
+    $colorNav = 'navbar-light bg-light';
+  }
+  return $colorNav
+  } 
   <a class="navbar-brand" href="home.php">WAD Beauty</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -84,9 +136,6 @@
 </div>
 
 
-
-
- 
 
 
 
