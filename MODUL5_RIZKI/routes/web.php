@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('Home', function () {
     return view('Home');
 });
 
-Route::get('/', function () {
-    return view('Inputproduct');
+Route::get('iniproduk', function () {
+    return view('iniproduk');
 });
 
-Route::get('/' function () {
+Route::get('order', function () {
+    return view('order');
+});
+
+Route::get('produk', function () {
     return view('produk');
 });
+

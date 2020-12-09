@@ -2,21 +2,21 @@
 @section ('Template')
 
 <div class="text-center mt-5">
-    <h3> Isi produk <h3>
+    <h3> iniproduk <h3>
 </div>
 <form>
     <div class="form-group">
-        <label for="exampleFormControlInput1">Nama Product</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+        <label for="exampleFormControlInput1">Name Product</label>
+        <input type="text" class="form-control" id="exampleFormControlini1" name="name">
     </div>
     <div class="form-group">
     <label for="exampleFormControlInput1">Price</label>
-      <label class="sr-only" for="inlineFormInputGroupUsername" name="price"></label>
+      <label class="sr-only" for="inlineFormInputGroupUsername" name="price">Price</label>
       <div class="input-group">
         <div class="input-group-prepend">
           <div class="input-group-text">$ USD</div>
         </div>
-        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="price">
       </div>
     </div>
     <div class="form-group">
@@ -25,16 +25,16 @@
     </div>
     <div class="form-group">
         <label for="exampleFormControlInput1">Stock</label>
-        <input type="number" class="form-control col-sm-4" id="exampleFormControlInput1" name="">
+        <input type="number" class="form-control col-sm-4" id="exampleFormControlInput1" name="stock">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlInput1">Image file input</label>
+        <label for="exampleFormControlInput1">Image file</label>
         <div>
-            <input type="file" class="col-sm-3" id="exampleFormControlInput1" name="jpg_path">
+            <input type="file" class="col-sm-4" id="exampleFormControlInput1" name="img_path">
         </div>
     </div>
-    <div class="form-group mt-5">
-    <button type="submit" name="submit"class="btn btn-dark">Send</button>
+    <div class="form-group mt-4">
+    <button type="submit" name="submit"class="btn btn-dark">Submit</button>
     </div>
 </form>
 

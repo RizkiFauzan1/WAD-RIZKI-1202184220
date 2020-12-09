@@ -31,9 +31,9 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-          <a class="nav-item nav-link" href="{{ url ('/')}}">HOME</a>
-            <a class="nav-item nav-link" href="{{ url ('/product')}}">PRODUCT</a>
-            <a class="nav-item nav-link" href="{{ url ('/order')}}">ORDER</a>
+          <a class="nav-item nav-link" href="{{ url ('Home')}}">HOME</a>
+            <a class="nav-item nav-link" href="{{ url ('iniproduk')}}">PRODUCT</a>
+            <a class="nav-item nav-link" href="{{ url ('order')}}">ORDER</a>
             <a class="nav-item nav-link" href="{{ url ('/history')}}">HISTORY</a>
           </div>
         </div>
